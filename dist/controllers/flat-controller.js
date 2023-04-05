@@ -26,7 +26,6 @@ class FlatController {
             const flatsQuery = flat_1.FlatQuery.findAll(filter, sorting, currentPage);
             const flats = yield client.query(flatsQuery);
             const pageCount = yield client.query(flat_1.FlatQuery.getPageCount(filter, sorting));
-            console.log(pageCount);
             const totalPage = Math.ceil(pageCount[0].count / config_1.default.flat.limitOnPage);
             const pagination = {
                 current: currentPage,
