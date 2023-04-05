@@ -6,7 +6,7 @@ import config from "../config";
 interface IndexRouteRequest {
   filter?: Filters
   sorting?: Sorting
-  page: Page
+  page?: Page
 }
 
 export class FlatController {
@@ -30,8 +30,6 @@ export class FlatController {
         sorting,
       )
     )
-
-    console.log(pageCount)
 
     const totalPage = Math.ceil(pageCount[0].count / config.flat.limitOnPage)
 
